@@ -32,3 +32,4 @@ def extractChannels():
 #cv2.waitKey()
 
 extractChannels()
+#aosj
