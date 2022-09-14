@@ -16,14 +16,14 @@ def demoImageIO():
     cv2.imwrite("out.png", im, formatParameters_png)
     cv2.imwrite("out.jpg", im2, formatParameters_jpg)
 
-def extractChannels():
-    img = cv2.imread("kep.jpg")
-    img_red = img[:, :, 2]
+def extractGreenChannel():
+    img = cv2.imread("hellenergy.jpg")
+    img2 = numpy.ndarray(img.shape, numpy.uint8)
     img_green = img[:, :, 1]
-    img_blue = img[:, :, 0]
-    cv2.imshow("red", img_red)
-    cv2.imshow("green", img_green)
-    cv2.imshow("blue", img_blue)
+    img2[:, :, 0] = 0
+    img2[:, :, 1] = img_green
+    img2[:, :, 2] = 0
+    cv2.imshow("green", img2)
     
     cv2.waitKey()
 
@@ -31,5 +31,4 @@ def extractChannels():
 #cv2.imshow("M", M)
 #cv2.waitKey()
 
-extractChannels()
-#aosj
+extractGreenChannel()
