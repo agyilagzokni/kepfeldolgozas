@@ -24,7 +24,6 @@ def extractGreenChannel():
     img2[:, :, 1] = img_green
     img2[:, :, 2] = 0
     cv2.imshow("green", img2)
-    
     cv2.waitKey()
 
 #M = numpy.full((480, 640), 100, numpy.uint8)
