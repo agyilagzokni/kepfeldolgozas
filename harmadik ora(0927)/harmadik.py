@@ -3,7 +3,7 @@ import cv2
 
 def convertRBGtoGray():
     im = cv2.imread("hellenergy.jpg")
-    print(im.shape[:2])
+    #print(im.shape[:2])
     i = numpy.ndarray(im.shape[:2], numpy.uint8)
     i[:, :] = im[:, :, 0] * 0.07 + im[:, :, 1] * 0.72 + im[:, :, 2] * 0.21
     cv2.imshow("convertRBGtoGray", i)
