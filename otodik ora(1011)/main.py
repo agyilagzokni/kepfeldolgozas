@@ -16,6 +16,7 @@ def erozio(): #vékonyít
 
 def nyitas(): #kisebb képhibák eltávolítása dilatacioval és erozioval
     im = cv2.imread("morp_test_open.png", 0)
+    cv2.imshow(f"eredeti opened", im)
     kernel = numpy.ones((3,3), dtype=numpy.uint8)
     kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (3, 3))
 
@@ -23,8 +24,9 @@ def nyitas(): #kisebb képhibák eltávolítása dilatacioval és erozioval
     dilated = cv2.dilate(eroded, kernel)
     cv2.imshow("nyitas", dilated)
 
-def zaras():
+def zaras(): #körülhatárolt részek feltöltése
     im = cv2.imread("morp_test_closed.png", 0)
+    cv2.imshow(f"eredeti closed", im)
     kernel = numpy.ones((3,3), dtype=numpy.uint8)
     kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 7))
 
@@ -33,9 +35,8 @@ def zaras():
     cv2.imshow("zaras", eroded)
 
 if __name__ == "__main__":
-    cv2.imshow("eredeti", cv2.imread("morp_test_closed.png", 0))
     #dilatacio()
     #erozio()
     #nyitas()
-    zaras()
+    #zaras()
     cv2.waitKey(0)
